@@ -121,3 +121,4 @@ endif
 "色を付ける
 syntax on
 colorscheme molokai
+

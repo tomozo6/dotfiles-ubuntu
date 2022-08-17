@@ -1,26 +1,33 @@
 # 基本は github.com のレポジトリーを指定するだけ
-[[plugins]]
+#[[plugins]]
 repo = 'Shougo/dein.vim'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
+#[[plugins]]
+#repo = 'Shougo/vimproc.vim'
+#hook_post_update = '''
+#  if dein#util#_is_windows()
+#    let cmd = 'tools\\update-dll-mingw'
+#  elseif dein#util#_is_cygwin()
+#    let cmd = 'make -f make_cygwin.mak'
+#  elseif executable('gmake')
+#    let cmd = 'gmake'
+#  else
+#    let cmd = 'make'
+#  endif
+#  let g:dein#plugin.build = cmd
+#'''
 #ステータスラインのテーマ
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+# Nginxのシンタックスハイライト
+[[plugins]]
+repo = 'chr4/nginx.vim'
 
 # Terraformのシンタックスハイライト
 [[plugins]]
@@ -125,32 +132,6 @@ repo = 'rhysd/clever-f.vim'
 repo = 'kana/vim-operator-user'
 
 #コピーしたところが一瞬ハイライトされる 入らなかった
-#[[plugins]]
-#repo = 'haya14busa/vim-operator-flashy'
-
-#html補完
 [[plugins]]
-repo = 'mattn/emmet-vim'# 基本は github.com のレポジトリーを指定するだけ
-[[plugins]]
-repo = 'Shougo/dein.vim'
+repo = 'haya14busa/vim-operator-flashy'
 
-# flake8-vim
-# pip install frosted
-#[[plugins]]
-#repo = 'andviro/flake8-vim'
-
-# git clone 後、実行すべきコマンドがある場合はこんな感じ
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
